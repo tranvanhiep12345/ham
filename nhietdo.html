@@ -1,23 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+	<title>Chuyển đổi F sang C</title>
+	<meta charset="utf-8">
 </head>
 <body>
-    <form>
-        <p>
-            <label>Nhập độ F</label>
-            <input type="number" id="inputFahrenheit" placeholder="Fahrenheit" oninput="temperatureConverter(this.value)"
-             onchange="temperatureConverter(this.value)">
-        </p>
-        <p>Celsius: <span id="outputCelsius"></span></p>
-    </form>
+	<h1>Chuyển đổi từ độ F sang độ C</h1>
+	<p>Nhập giá trị độ F:</p>
+	<input type="number" id="inputF">
+	<button onclick="doidoF()">Chuyển đổi</button>
+	<p id="outputC"></p>
 </body>
 <script>
-    function temperatureConverter(valNum) {
-        valNum = parseFloat(valNum);
-        document.getElementById("outputCelsius").innerHTML = (valNum-32) / 1.8;
-    }    
+    function doidoF() {
+        let f = document.getElementById("inputF").value;
+        let c = (f - 32) / 1.8;
+        document.getElementById("outputC").innerHTML = "Độ C tương ứng: " + c;
+    }
 </script>
 </html>

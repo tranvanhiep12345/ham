@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head> 
+<body>
+</body>
+<script>    
+    let sao = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus']
+    let chomsao = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo']
+    function timchomsao(tenngoisao){
+        for (let i=0; i < sao.length; i++){
+            if (sao[i] === tenngoisao){
+                return chomsao[i]
+            }
+        }
+        return "Không tìm thấy "
+    }
+    let ngoisao = prompt("Nhập tên ngôi sao")
+    alert("Tên chòm sao của ngôi sao " + ngoisao + " là " + timchomsao(ngoisao) )
+</script>
+</html>

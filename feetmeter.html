@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi đơn vị</title>
+</head>
+<body>
+    <script>
+        let feet = prompt("Nhập feet: ")
+        let meters = prompt("Nhập meter: ")
+        function feetToMeter(feet){
+            let meter = feet * 0.305
+            return meter
+        }
+        document.write(feet + " feet = " + feetToMeter(feet) + " meter") 
+        document.write("<br>")
+        function meterToFeet(meters){
+            let foot = meters * 3.279
+            return foot
+        }
+        document.write(meters + " meter = " + meterToFeet(meters) + " feet")
+    </script>
+</body>
+</html>

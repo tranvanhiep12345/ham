@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charget="UTF-8">
+    <title>Tính diện tích hình tròn</title>
+</head>
+<body>
+<script>
+    let myCircle = function(radius){
+        this.radius = radius
+        this.getRadius = function(){
+            return this.radius
+        }
+        this.getArea = function(){
+            return Math.PI*radius*radius
+        }
+    }
+    let circle = new myCircle(15)
+    let radius = circle.getRadius()
+    let area = circle.getArea()
+    alert("Bán kính hình tròn: " + radius + ", Diện tích hình tròn: " + area)
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charget="UTF-8">
+    <title>Ngày tháng năm</title>
+</head>
+<body>
+<script>
+    let mydate = function(day, month, year){
+        this.day = day
+        this.month = month
+        this.year = year
+        this.getDay = function(day){
+            return this.day
+        }
+        this.getMonth = function(month){
+            return this.month
+        }
+        this.getYear = function(year){
+            return this.year
+        }
+        this.setDay = function(day){
+            this.day = day
+        }
+        this.setMonth = function(month){
+            this.month = month
+        }
+        this.setYear = function(year){
+            this.year = year
+        }
+    }
+    let date = new mydate(22,03,2023)
+    let day = date.getDay()
+    let month = date.getMonth()
+    let year = date.getYear()
+    alert("Hôm nay là ngày " + day + "/" + month + "/" + year)
+</script>
+</body>
+</html>

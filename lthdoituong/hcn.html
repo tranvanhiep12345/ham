@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charget="UTF-8">
+    <title>Hình chữ nhật</title>
+</head>
+<body>
+    <canvas id="canvas" width="1000px" height="500px" style="border:1px solid #d3d3d3;"></canvas>
+</body>
+<script>
+    class Rectangle {
+        width;
+        height;
+        constructor(width, height){
+        this.width = width;
+        this.height = height;
+        }
+        getArea(){
+            return this.width * this.height
+        }
+        getPerimeter(){
+            return (this.width + this.height)*2
+        }
+        drawRec(){
+            let ctx = document.getElementById('canvas').getContext('2d')
+            ctx.beginPath()
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+			ctx.fillRect(0, 0, this.width, this.height);
+            ctx.closePath()
+        }
+    }
+    let rectangle = new Rectangle(100, 50);
+	rectangle.drawRec();
+	let area = rectangle.getArea();
+	let perimeter = rectangle.getPerimeter();
+	document.write('Area: ' + area + '<br>');
+	document.write('Perimeter: ' + perimeter);
+</script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charget="UTF-8">
+    <title>Đổi nhiệt độ</title>
+</head>
+<body>
+<script>
+class Temperature{
+    celsius;
+    constructor(celsius){
+        this.celsius = celsius
+    }
+    getFahrenheit(){
+        return this.celsius * 9/5 +32
+    }
+    getKelvin(){
+        return this.celsius + 274.15 
+    }
+}
+let temperature = new Temperature(-274.15)
+let fahrenheit = temperature.getFahrenheit()
+let kelvin = temperature.getKelvin()
+document.write('Độ F là: ' + fahrenheit + '<br>')
+document.write('Độ K là: ' + kelvin)
+</script>
+</body>
+</html>

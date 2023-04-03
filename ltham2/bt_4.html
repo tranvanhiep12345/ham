@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra ký tự</title>
+</head>
+<body>
+<script>
+    // function isNumber(char) {
+    //     return /\d/.test(char);
+    // }
+    function isNumber(character) {
+        return !isNaN(parseFloat(character)) && isFinite(character);
+    }
+    let a = prompt("Nhập 1 ký tự bất kì: ")
+    alert(isNumber(a));
+</script>
+</body>
+</html>

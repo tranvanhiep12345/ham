@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charget="UTF-8">
+    <title>Điện thoại</title>
+</head>
+<body>
+<script>
+    class Mobile {
+        constructor(brand, model) {
+            this.brand = brand;
+            this.model = model;
+            this.inbox = [];
+        }
+        sendMessage(message, receiver) {
+            receiver.receiveMessage(message);
+        }
+
+        receiveMessage(message) {
+            this.inbox.push(message);
+        }
+        checkInbox() {
+            return this.inbox;
+        }
+    }
+    let nokia = new Mobile("Nokia", "3310");
+    let iPhone = new Mobile("Apple", "iPhone 12");
+    nokia.sendMessage("Hello from Nokia!", iPhone);
+    console.log(iPhone.checkInbox());
+</script>
+</body>
+</html>

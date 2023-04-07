@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form tìm kiếm</title>
+</head>
+<body>
+    <h1>Market Research Survey</h1>
+    <p>Please take a few moment to complete this satisfaction survey</p>
+    <hr>
+    <ul style="list-style-type:circle">
+        <li>
+            <h3>What is your age range ? </h3>
+            <select name="age" style="width: 250px; height: 25px;">
+                <option value="age">18-24</option>
+                <option value="age">25-34</option>
+                <option value="age">35-50</option>
+                <option value="age">50+</option>
+            </select>
+        </li>
+        <li>
+            <h3>What is your yearly income range?</h3>
+            <select name="income" style="width: 250px; height: 25px;">
+                <option value="money">$0-$25,000</option>
+                <option value="money">$25,001-$50,000</option>
+                <option value="money">$50,001-$75,000</option>
+                <option value="money">$75,001-$100,000</option>
+            </select>
+        </li>
+        <li>
+            <form>
+                <h3>Gender</h3>
+                <label><input type="radio" name="nam" id="male">Male</label><br>
+                <label><input type="radio" name="nam" id="female">Female</label><br>
+                <label><input type="radio" name="nam" id="nonbinary">Nonbinary</label><br>
+            </form>
+        </li>
+        <li>
+            <form>
+                <h3>Which of the following products have your purchased in the last 2 months. Please check all that apply.</h3>
+                <label><input type="checkbox" name="lua-chon1" id="product1">Clothes</label><br>
+                <label><input type="checkbox" name="lua-chon2" id="product2">Food</label><br>
+                <label><input type="checkbox" name="lua-chon3" id="product3">Appliances</label><br>
+            </form>
+        </li>
+        <li>
+            <form>
+                <h3>How often would you use our new product?</h3>
+                <label><input type="radio" name="nam" id="male">Daily</label><br>
+                <label><input type="radio" name="nam" id="female">Weekly</label><br>
+                <label><input type="radio" name="nam" id="nonbinary">Monthly</label><br>
+            </form>
+        </li>
+        <li>
+            <h3>What would you pay for the new product?</h3>
+            $ <input type="number" name="money" style="width: 40px;"> . 
+            <input type="number" name="money" style="width: 40px;">
+        </li>
+    </ul>
+</body>
+</html>

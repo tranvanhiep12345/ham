@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Caculator</title>
+    <style>
+        th {
+            border-width: 1px;
+            max-width: 30px;
+        }
+        button {
+            width: 60px;
+            height: 33px
+        }
+    </style>
+</head>
+<body>
+    <table border="2" style="width: 400px; height: 240px">
+        <tr>
+            <td colspan="6"><input type="text" id="scr" style="width: 387px; height: 35px; font-size: larger;"></td>
+        </tr>
+        <tr>
+            <th><button onclick="absolute()">|x|</button></th>
+            <th><button onclick="square()">x^2</button></th>
+            <th><button onclick="powofe()">e^x</button></th>
+            <th><button onclick="percent()">%</button></th>
+            <th><button onclick="nhap('c')">AC</button></th>
+            <th><button onclick="nhap('+')">+</button></th>
+        </tr>
+        <tr>
+            <th><button onclick="sinOf()">Sin</button></th>
+            <th><button onclick="giaithua()">x!</button></th>
+            <th><button onclick="nhap(1)">1</button></th>
+            <th><button onclick="nhap(2)">2</button></th>
+            <th><button onclick="nhap(3)">3</button></th>
+            <th><button onclick="nhap('-')">-</button></th>
+        </tr>
+        <tr>
+            <th><button onclick="cosOf()">Cos</button></th>
+            <th><button onclick="luythua()">x^e</button></th>
+            <th><button onclick="nhap(4)">4</button></th>
+            <th><button onclick="nhap(5)">5</button></th>
+            <th><button onclick="nhap(6)">6</button></th>
+            <th><button onclick="nhap('x')">X</button></th>
+        </tr>
+        <tr>
+            <th><button onclick="tanOf()">Tan</button></th>
+            <th><button onclick="logNepe()">ln</button></th>
+            <th><button onclick="nhap(7)">7</button></th>
+            <th><button onclick="nhap(8)">8</button></th>
+            <th><button onclick="nhap(9)">9</button></th>
+            <th><button onclick="nhap('/')">/</button></th>
+        </tr>
+        <tr>
+            <th><button onclick="eXp()">e</button></th>
+            <th><button onclick="squareRootOf()">√</button></th>
+            <th><button onclick="argument()">1/x</button></th>
+            <th><button onclick="nhap(0)">0</button></th>
+            <th><button onclick="nhap('.')">.</button></th>
+            <th><button onclick="ketQua()">=</button></th>
+        </tr>
+    </table>
+</body>
+<script>
+    var idText = document.getElementById("scr");
+    function nhap(id) {
+        idText.value += id
+        if (id == 'c'){
+            idText.value = " "
+        }
+    }
+    function ketQua() {
+        idText.value = eval(idText.value)
+    }
+    function absolute(){
+        if (idText.value < 0){
+            idText.value = - idText.value
+        }
+    }
+    function powofe(){
+        idText.value = Math.exp(idText.value)
+    }
+    function percent() {
+        idText.value = idText.value * 100;
+    }
+    function square(){
+        idText.value *=  idText.value
+    }
+    function sinOf(){
+        idText.value = Math.sin(idText.value * Math.PI / 180)
+    }
+    function giaithua(){
+        let x = idText.value;
+        let gt =1
+        for (let i=1; i <= x; i++){
+            gt *= i
+        }
+        idText.value = gt
+    }
+    function cosOf(){
+        idText.value = Math.cos(idText.value * Math.PI / 180)
+    }
+    function luythua(){
+        idText.value = Math.pow(idText.value , Math.E)
+    }
+    function tanOf(){
+        idText.value = Math.tan(idText.value * Math.PI / 180)
+    }
+    function logNepe(){
+        idText.value = Math.log(idText.value)
+    }
+    function eXp(){
+        idText.value = Math.E
+    }
+    function squareRootOf(){
+        idText.value = Math.sqrt(idText.value)
+    }
+    function argument(){
+        idText.value = 1/idText.value
+    }
+</script>
+</html>

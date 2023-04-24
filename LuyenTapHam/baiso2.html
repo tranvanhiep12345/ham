@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script> 
+    function perfectNumbers(index){
+        let arr = []
+        for (let i=1; i < index; i++){
+            if (index%i === 0) {
+                arr.push(i)
+            }
+        }
+        let sum = arr.reduce((a,b) => a+b)
+        index = (sum === index) ? "Đây là số hoàn hảo" : "Không phải số hoàn hảo"
+        return index
+    }
+    console.log(perfectNumbers(496));
+</script>
+</body>
+</html>

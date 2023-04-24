@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script> 
+    function soLanxuathien(array,n) {
+        let count = 0
+        for(let k=0; k < array.length; k++){
+            if(array[k] == n){
+                count ++;
+            }
+        }
+        return count
+    }
+
+    let a = +prompt('Nhap a: ')
+    let b = +prompt('Nhap b: ')
+    let c = +prompt('Nhap c: ')
+    let arr = [`${a}${b}${c}`,`${a}${c}${b}`,`${b}${a}${c}`,`${b}${c}${a}`,`${c}${a}${b}`,`${c}${b}${a}`]
+    // console.log(arrThree);
+
+    for(let j=0; j < arr.length; j++){
+        if (soLanxuathien(arr,arr[j]) > 1){
+            arr.splice(j,1)
+        }
+    }
+
+    let arr1 = []
+    arr.forEach(function(item, index) {
+        if (item > 99 && item < 1000){
+            arr1.push(arr[index])
+        }
+    }) 
+    console.log(arr1);
+
+</script>
+</body>
+</html>

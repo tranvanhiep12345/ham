@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script> 
+    function perfectNumbers(index){
+        let arr = []
+        for (let i=1; i < index; i++){
+            if (index%i === 0) {
+                arr.push(i)
+            }
+        }
+        let sum = arr.reduce((a,b) => a+b,0)
+        index = (sum === index) ? index : "false"
+        return index
+    }
+
+    let count = 0
+    let number = 1
+    while(count < 4){
+        if (perfectNumbers(number) !== "false"){
+            document.write(number + '<br>')
+            count++
+        }
+        number++
+    }
+
+</script>
+</body>
+</html>

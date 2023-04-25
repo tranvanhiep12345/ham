@@ -21,7 +21,7 @@
             if (arr.indexOf(inputProduct) === -1){
                 arr.push(inputProduct)
                 displayProduct()
-                inputProduct = " "
+                document.getElementById('inputNewProduct').value = " "
             } else {
                 alert('Sản phẩm này đã có')
             }
@@ -31,8 +31,35 @@
     }
 
     function displayProduct(){
-        
+        let tableDisplay = `<table>
+                <tr><td><h4>Product Name</h4></td>
+                <td colspan="2" align="right">${arr.length} products</td>
+                </tr>`
+        for (let i=0; i < arr.length; i++){
+            tableDisplay += `<tr>
+                <td>${arr[i]}</td>
+                <td><button type="button" onclick="editProduct(${i})">Edit</button></td>
+                <td><button type="button" onclick="deleteProduct(${i})">Delete</button></td>
+                </tr>`
+        }
+        document.getElementById('displayProduct').innerHTML = tableDisplay
+    }
+
+    function changeProduct(index){
+        arr[index] = prompt('Nhap san pham ban muon thay doi')
+        if (arr[index]){
+            displayProduct()
+        } else {
+            alert('Ban khong thay doi gi ca')
+        }
     }
     
+    function deleteProduct(index){
+        let confirmDelete = confirm('Ban chac chan chu')
+        if (confirmDelete){
+            arr.splice(index,1)
+        } 
+        displayProduct()
+    }
 </script>
 </html>

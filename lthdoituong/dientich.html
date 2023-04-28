@@ -6,19 +6,24 @@
 </head>
 <body>
 <script>
-    let myCircle = function(radius){
-        this.radius = radius
-        this.getRadius = function(){
-            return this.radius
+    class Circle {
+        radius;
+        color;
+        constructor(radius,color){
+            this.radius = radius
+            this.color = color
         }
-        this.getArea = function(){
-            return Math.PI*radius*radius
+        getRadius(){
+            return this.radius 
+        }
+        getArea(){
+            return Math.PI * Math.abs(this.radius)
         }
     }
-    let circle = new myCircle(15)
+    let circle = new Circle(12)
     let radius = circle.getRadius()
     let area = circle.getArea()
-    alert("Bán kính hình tròn: " + radius + ", Diện tích hình tròn: " + area)
+    console.log(radius +" , " +area)
 </script>
 </body>
 </html>

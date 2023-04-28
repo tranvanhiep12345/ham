@@ -1,4 +1,0 @@
-class Battery{
-    energy;
-    constructor()
-}

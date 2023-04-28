@@ -6,34 +6,37 @@
 </head>
 <body>
 <script>
-    let mydate = function(day, month, year){
-        this.day = day
-        this.month = month
-        this.year = year
-        this.getDay = function(day){
+    class Date {
+        day;
+        month;
+        year;
+        constructor(day,month,year){
+            this.day = day
+            this.month = month
+            this.year = year 
+        }
+        getDay(){
             return this.day
         }
-        this.getMonth = function(month){
+        getMonth(){
             return this.month
         }
-        this.getYear = function(year){
+        getYear(){
             return this.year
         }
-        this.setDay = function(day){
+        setDay(){
             this.day = day
         }
-        this.setMonth = function(month){
+        setMonth(){
             this.month = month
         }
-        this.setYear = function(year){
-            this.year = year
+        setYear(){
+            this.year = year 
         }
     }
-    let date = new mydate(22,03,2023)
-    let day = date.getDay()
-    let month = date.getMonth()
-    let year = date.getYear()
-    alert("Hôm nay là ngày " + day + "/" + month + "/" + year)
+    let date = new Date(26,04,2023)
+    let {day,month,year} = date
+    console.log(`Hôm nay là ngày ${day}/${month}/${year}`)
 </script>
 </body>
 </html>

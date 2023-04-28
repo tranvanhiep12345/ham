@@ -2,9 +2,69 @@
 <html lang="en">
 <head>
     <meta charget="UTF-8">
-    <title>Tính diện tích hình tròn</title>
+    <title></title>
 </head>
 <body>
-<script src=""></script>
+<script>
+    class Battery{
+        constructor(energy){
+            this.energy = energy
+        }
+        setEnergy(newEnergy){
+            this.energy = newEnergy
+        }
+        getEnergy(){
+            return this.energy
+        }
+        decreaseEnergy(){
+            if (this.energy > 0){
+                this.energy--
+            }
+        }
+    }
+
+    class FlashLamp{
+        constructor(status,battery){
+            this.status = status
+            this.battery = battery
+        }
+        getBattery(){
+            return this.battery.getEnergy()   
+        }
+        light(){
+            if (this.status){
+                return `Lighting`
+            } else {
+                return `Not lighting`
+            }
+        }
+        turnOn(){
+            this.status = true 
+            this.battery.decreaseEnergy()
+            return `Turn on`
+        }
+        turnOff(){
+            this.status = false
+            return `Turn off`
+        }
+    }
+
+    let battery1 = new Battery(10);
+    let lamp1 = new FlashLamp(false, battery1);
+    document.write(lamp1.light() + '<br>');
+    document.write("Battery info: " + lamp1.getBattery() + '<br>'+ '<br>');
+
+    document.write(lamp1.turnOn()+ '<br>');
+    document.write(lamp1.light() + '<br>');
+    document.write("Battery info: " + lamp1.getBattery() + '<br>'+ '<br>');
+
+    document.write(lamp1.turnOn()+ '<br>');
+    document.write(lamp1.light() + '<br>');
+    document.write("Battery info: " + lamp1.getBattery() + '<br>'+ '<br>');
+
+    document.write(lamp1.turnOff()+ '<br>');
+    document.write(lamp1.light() + '<br>');
+    document.write("Battery info: " + lamp1.getBattery() + '<br>'+ '<br>');
+</script>
 </body>
 </html>

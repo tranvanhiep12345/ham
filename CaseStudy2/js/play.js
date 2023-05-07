@@ -17,7 +17,8 @@ function startGame(){
     // Tạo các đối tượng ảnh và đẩy vào mảng 2 chiều
     let eightCard = ['bac','cam','den','do','luc','nau','tim','vang']
     let listCardnotRandom =  eightCard.concat(eightCard)
-    let nameCards = listCardnotRandom.sort(() => Math.random() - 0.5)
+    let nameCards = listCardnotRandom
+    //.sort(() => Math.random() - 0.5)
     let count = 0
     for(let i=0; i < 4; i++){
         listCard.push([])

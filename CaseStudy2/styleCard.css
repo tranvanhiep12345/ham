@@ -1,0 +1,83 @@
+
+.container {
+    font-family: fantasy;
+    flex-direction: column;
+    font-size: 30px;
+    color: rgb(187, 4, 4);
+    text-align: center;
+}
+.headerAndInner {
+    width: 300px;
+    background-color: floralwhite;
+    display: flex;
+    text-align: left;
+    font-size: 15px;
+    margin: 0 auto;
+}
+
+#labelLV{
+    background-color: white;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+
+}
+.btnStart {
+    width: 100px;
+    padding: 10px 0px;
+    border-radius: 10px;
+    background-color: rgb(99, 119, 8);
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    margin: auto;
+    cursor: pointer;
+    opacity: 100%;
+}
+.btnStart:hover{
+    background-color: lightblue;
+}
+.displayTable {
+    display: flex;
+    justify-content: center;
+}
+.table {
+    border-collapse: collapse;
+    border-spacing: 1px;
+}
+td {
+    width: 100px;
+    height: 10px;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 10px;
+    /*margin: 0;*/
+}
+tr{
+    /*width: 150px;*/
+    height: 90px;
+}
+img{
+    width:100px;
+    height:96px;
+    border-radius: 10px;
+}
+.center-div{
+    /* width:160px;
+    height:154px;
+    margin-left: 610px; */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+h2,h3{
+    text-align: center;
+}
+body{
+    background-image: url("../CaseStudy2/image/background.jpg");
+    background-size: 1322px;
+    background-repeat: no-repeat;
+}
+/* .ranking{
+    background-size: 1322px;
+    background-repeat: no-repeat;
+} */

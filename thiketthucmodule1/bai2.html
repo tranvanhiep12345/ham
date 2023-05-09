@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    function deleteNumberFromArray(arr) {
+        for (let i=0; i < arr.length; i++){
+            if (arr[i] < 0 && arr[i] > arr.length ){
+                return arr
+            } else {
+                arr.splice(i, 1)
+                return arr
+            }
+        }
+    } 
+    let arr1 = [1, 2, 3, -4, -8, -10, 10]
+    console.log(deleteNumberFromArray(arr1));
+</script>
+</html>

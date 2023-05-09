@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    function sumOfListFibonacy(x) {
+        if (x <= 0){
+            return 0
+        } 
+        let a = 0
+        let b = 1
+        let sum = 0
+        while (b <= x) {
+            sum += b;
+            let temp = a;
+            a = b;
+            b += temp;
+        } 
+        return sum
+    }
+    let y = 10
+    console.log(sumOfListFibonacy(y));
+</script>
+</html>

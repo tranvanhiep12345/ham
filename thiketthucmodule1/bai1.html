@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    function findMax(arr) {
+        let max1 = -Infinity;
+        let max2 = -Infinity;
+        for (let i = 0; i < arr.length ; i++) {
+            if (arr[i] > max1) {
+                max2 = max1;
+                max1 = arr[i];
+            } else if (arr[i] > max2) {
+                 max2 = arr[i];
+            }
+        }
+        return max2;
+    }
+    let arr1 = [8, 7, 9, 5, 10, 6]
+    console.log(findMax(arr1))
+</script>
+</html>

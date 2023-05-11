@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <h2>Add New Product</h2>
+    <label for="inputNewProduct"></label>
+    <input type="text" id="inputNewProduct" placeholder="New Product">
+    <button type="button" onclick="productList.addProduct()">Add</button>
+    <br>
+    <h3>Display All Product</h3>
+    <p id="displayProduct"></p>
+</body>
+<script>
+    class ProductList {
+        constructor() {
+            this.products = [];
+        }
+        addProduct() {
+            let inputProduct = document.getElementById('inputNewProduct').value
+            if (inputProduct) {
+                if (this.products.indexOf(inputProduct) === -1) {
+                    this.products.push(inputProduct)
+                    this.displayProduct()
+                    document.getElementById('inputNewProduct').value = ''
+                } else {
+                    alert('Sản phẩm này đã có')
+                }
+            } else {
+                alert('Vui lòng nhập lại')
+            }
+        }
+
+        displayProduct() {
+            let tableDisplay = `<table>
+                        <tr><td><h4>Product Name</h4></td>
+                        <td colspan="2" align="right">${this.products.length} products</td>
+                        </tr>`
+            for (let i = 0; i < this.products.length; i++) {
+                tableDisplay += `<tr>
+                        <td>${this.products[i]}</td>
+                        <td><button type="button" onclick="productList.changeProduct(${i})">Edit</button></td>
+                        <td><button type="button" onclick="productList.deleteProduct(${i})">Delete</button></td>
+                        </tr>`
+            }
+            document.getElementById('displayProduct').innerHTML = tableDisplay
+        }
+
+        changeProduct(index) {
+            let newProduct = prompt('Nhap san pham ban muon thay doi')
+            if (newProduct) {
+                this.products[index] = newProduct
+                this.displayProduct()
+            } else {
+                alert('Ban khong thay doi gi ca')
+            }
+        }
+
+        deleteProduct(index) {
+            let confirmDelete = confirm('Ban chac chan chu ???')
+            if (confirmDelete) {
+                this.products.splice(index, 1)
+            }
+            this.displayProduct()
+        }
+    }
+
+    let productList = new ProductList();
+</script>
+</html>

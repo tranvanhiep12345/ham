@@ -1,24 +1,27 @@
 class Card {
-    constructor(name,status){
+    constructor(name,status,hidden){
         this.name = name
         this.status = false
         this.hidden = false
     }
 }
 
+let result = document.getElementById('result')
 function startGame(){
     // reset tất cả mọi thứ về trạng thái ban đầu
-    document.getElementById('result').innerHTML = " "
+    audioBackground.play()
+    result.innerHTML = " "
+    timer.innerHTML = `00:00:000`
     clearInterval(timerIntervalId); // Xóa bỏ interval cũ nếu có
     minutes = 0
     seconds = 0
     tens = 0
     checkout = 0
+
     // Tạo các đối tượng ảnh và đẩy vào mảng 2 chiều
     let eightCard = ['bac','cam','den','do','luc','nau','tim','vang']
     let listCardnotRandom =  eightCard.concat(eightCard)
-    let nameCards = listCardnotRandom
-    //.sort(() => Math.random() - 0.5)
+    let nameCards = listCardnotRandom.sort(() => Math.random() - 0.5)
     let count = 0
     for(let i=0; i < 4; i++){
         listCard.push([])
@@ -81,6 +84,7 @@ let checkout = 0
 function clickImage(imgx,imgy){
     if (!listCard[imgx][imgy].status && !listCard[imgx][imgy].hidden) {
         listCard[imgx][imgy].status = true
+        audioClick.play()
         showImage()
         checkMatch.push(listCard[imgx][imgy])
         if(checkMatch.length === 2){
@@ -92,8 +96,8 @@ function clickImage(imgx,imgy){
                 if (checkout === 8) {
                     clearInterval(timerIntervalId);
                     console.log(timerIntervalId)
-                    document.getElementById('result').innerHTML = `Your time was ${minutes}:${seconds}:${tens}`
-                    timer.innerHTML = `00:00:000`
+                    result.innerHTML = `Your time was ${minutes}:${seconds}:${tens}`
+                    audioBackground.pause()
                 }
             } else {
                 setTimeout(() => {

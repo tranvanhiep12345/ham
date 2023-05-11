@@ -1,39 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Objects</title>
 </head>
+
 <body>
     <div id="game"></div>
-<script>
-function Hero(image, top, left, size){
-    this.image = image;
-    this.top = top;
-    this.left = left;
-    this.size = size;
+    <script>
+        class Game {
+            image;
+            top;
+            left;
+            size;
 
-    this.getHeroElement = function(){
-    return '<img width="'+ this.size + '"' +
-      ' height="'+ this.size + '"' +
-      ' src="' + this.image +'"' +
-      ' style="top: '+this.top+'px; left:'+this.left+'px;position:absolute;" />';
-    }
+            constructor(image, top, left, size) {
+                this.image = image;
+                this.top = top;
+                this.left = left;
+                this.size = size;
+            }
 
-    this.moveRight = function(){
-    this.left += 20;
-    console.log('ok: ' + this.left);
-    }
-}
-let hero = new Hero('https://raw.githubusercontent.com/codegym-vn/objects/master/pikachu.png', 20, 30, 200);
-function start(){
-    if(hero.left < window.innerWidth - hero.size){
-        hero.moveRight();
-    }
-    document.getElementById('game').innerHTML = hero.getHeroElement();
-    setTimeout(start, 500)
-}
-start();
-</script>
+            getHeroElement() {
+                return '<img width="' + this.size + '"' +
+                    ' height="' + this.size + '"' +
+                    ' src="' + this.image + '"' +
+                    ' style="top: ' + this.top + 'px; left:' + this.left + 'px;position:absolute;" />';
+            }
+
+            moveRight() {
+                let speed = 100;
+                this.left += speed;
+            }
+
+            moveLeft() {
+                let speed = 100;
+                this.left -= speed;
+            }
+
+            moveTop() {
+                let speed = 100;
+                this.top -= speed;
+            }
+
+            moveBottom() {
+                let speed = 100;
+                this.top += speed;
+            }
+        }
+
+        let hero = new Game('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuYS5u6U_e-uwAi5FGTwxoVLenduNiv50ncg&usqp=CAU', 0, 0, 200);
+        function start() {
+            if (hero.left <= window.innerWidth - hero.size && hero.top === 0) {
+                hero.moveRight();
+            }
+            if (hero.left >= -hero.size && hero.top > window.innerHeight - hero.size) {
+                hero.moveLeft()
+            }
+            if (hero.top < window.innerHeight - hero.size && hero.left >= window.innerWidth - hero.size) {
+                hero.moveBottom();
+            }
+            if (hero.top > 0 && hero.left < 0) {
+                hero.moveTop();
+            }
+            document.getElementById('game').innerHTML = hero.getHeroElement();
+            setTimeout(start, 100)
+        }
+
+        start();
+    </script>
 </body>
 </html>

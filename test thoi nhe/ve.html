@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vẽ trái tim</title>
+</head>
+<body>
+<script> 
+    let height = 8
+    let width = 9
+
+    for (let row = 1; row <= height; row++) {
+        document.write('<br>')
+        for (let col = 1; col <= width; col++) {
+            if ((row === 1 && (col === 2 || col === 3 ||col === 4 ||col === 6 ||col === 7 ||col === 8)) || 
+                (row === 2 && (col === 1 || col === 2 || col === 4 || col === 5 || col === 6 || col === 8 ||col === 9)) || 
+                (row === 3 && (col === 1 || col === 5 || col === 9)) || 
+                (row === 4 && (col === 1 || col === 2|| col === 8 || col === 9)) || 
+                (row === 5 && (col === 2 || col === 3 || col === 7 || col === 8)) || 
+                (row === 6 && (col === 3 || col === 4 || col === 6 || col === 7)) || 
+                (row === 7 && (col === 4 || col === 5 || col === 6)) ||
+                (row === 8 && col === 5 )) {
+                    document.write("*");
+            } else {
+                document.write('&nbsp&nbsp')
+            }
+        }
+    }
+</script> 
+</body>
+</html>
